@@ -1,0 +1,715 @@
+/* AUTHOR:	ALAN SHEEHAN	*/
+/* DATE:	28/11/2013		*/
+
+/* OVERALL */
+body {
+	font-size: 100%;
+	margin: 0;					/* Forces a screen fill */
+	font-family: Arial, Verdana;
+	color: #212121;
+	background: #E8E8E8;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;		/* Removes automatic link styling */
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a img {
+	border: 0;					/* Removes borders created by IE */
+}
+
+h1, h2, h3 {
+	font-family: Tahoma, Oswald, Arial;
+}
+/* __________________________________________*/
+
+
+
+/* HEAD */
+#header {
+	display: block;
+	text-align: center;			/* Centres all descendants of header */
+	margin: auto;				/* Centres the header */
+	background: #AA1212;
+} 
+
+#header img {					/* Logo */
+	margin-bottom: -1%;			/* Necessary to avoid small gap */	
+	max-width: 20%;				/*  Sizes logo */
+}
+
+
+
+	/* DISPLAY [IMAGE SLIDER] */
+	#display  {									/* Image Slider Container */
+		position: relative;						/* Position relative to allow display_left/right absolute positioning */
+		border-top: .8em solid #101010;	
+		border-bottom: .8em solid #101010;
+		box-shadow: inset 0 11em 150px -5px black, 
+					inset 0 -11em 150px -5px black;		/* Box shadow top & bottom */
+	}
+	
+	#displayPattern {							/* Subtle texture pattern for background */
+		height: 100%;
+		width: 100%;
+		opacity: .3;
+		position: absolute;
+		background-image: url('images/pattern.png');
+		background-repeat: repeat;
+	}
+	
+	#display #image {		/* Actual Display */
+		display: block;		/* Display as block to remove small margin */
+		margin: auto;
+		width: 78%;
+		border-right: .2em solid #101010;
+		border-left: .2em solid #101010;
+		position: relative;
+	}
+	
+	#displayButton_left, #displayButton_right {		/* Buttons for changing display */
+		width: 6%;
+		position: absolute;							/* Positions it relative to the display div */
+		opacity: 0.4;
+		border-radius: 100%;						/* Forms a circle around the button */
+		background: black;
+		top: 40%;
+		z-index: 5;
+		cursor: pointer;
+	}
+	
+	#displayButton_left {
+		margin-left: 12%;					/* Positions the left button to the left */
+	}
+	#displayButton_right {
+		margin-left: 82%;					/* Positions the right button to the right */
+		transform: rotate(180deg);			/* Flips the right button */
+		-ms-transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+	}
+	
+	#displayButton_right:hover, #displayButton_left:hover {
+		opacity: .8;						/* Creates hover effect */
+	}
+	
+	#info {
+		width: 45%;
+		background: rgba(10,10,10, .6);				/* Sets low opacity */
+		position: absolute;
+		margin-left: 27.5%;							/* Positioning */
+		top: 78.5%;
+		z-index: 10;								/* Positions info above display */					
+		text-align: center;
+		color: white;
+		font-size: 1.1em;
+		font-family:  Book Antiqua, Arial, Verdana;
+		text-shadow: .08em .08em #000;				/* Creates more visible text */
+		padding: 1% .5%;							/* Extra spacing between text and container */
+	}
+
+	
+	/* NAVIGATION */
+	nav {
+		padding: 0;				/* Removes automatic list padding */
+		margin: 0;				/* Removes an automatic margin between the image and nav */
+		position: relative;
+		background: #D93222;
+		border-top: 2px solid #FAE76E;
+	}
+
+	nav a{
+		padding: .5% 2% 0;
+		width: 4em;
+		text-align: center;
+		font-size: 1.5em;
+		list-style-type: none;
+		display: inline-block;		/* Horizontal display for list navigation */
+		color: #222222;
+		border-bottom: .2em solid #D93222;
+	}
+
+	nav a:hover, nav #active{						/* Hover Effect */
+		border-bottom: .2em solid #FAE76E;
+		color: #FAE76E;
+	}
+/* __________________________________________*/
+
+
+
+/* CONTENT */
+#content {
+	width: 74.9%;
+	min-height: 48em;
+	float: left;
+	padding-bottom: 5%;
+	background: #E8E8E8;
+	box-shadow: inset -6px 0px 12px -12px #888888;		/* Separates sidebar from content */
+	border-right: 1px solid #AAAAAA;					/* Separates sidebar from content */
+}
+
+#content .para, h1, form, #contactDetails, #openingHrs{
+	margin: 2.3% 5% 0;									/* Pushes all content in from the side */
+}
+
+#content .para {
+	text-indent: 5em;		/* First-line indent */
+	font-size: 1.2em;
+	font-family: trebuchet ms, verdana, arial;
+	margin-bottom: 2em;
+}
+
+#content h1 {
+	font-size: 3em;
+	margin-bottom: 4%;
+	text-shadow: #222 0px -.2px 1px, 
+				#222 0px .2px 1px;		/* Anti-aliasing for the header - pixelated otherwise */
+}
+	/* MENU PAGE */
+	#left, #mid, #right {		/* 3 Column Layout */
+		float: left;
+		width: 31%;
+		min-height: 40em;
+		margin: 0;
+	}
+	
+	#left {
+		margin-left: 5%;
+	}	
+
+	#mid {
+		border-left: 1px solid #B3B3B3;
+		box-shadow: 1px 0 0 #FFFFFF, -1px 0 0 #FFFFFF;	/* Separates all three columns */
+		border-right: 1px solid #B3B3B3;
+	}
+
+	h3 {
+		margin-bottom: 1.5em;
+		padding-left: .3em;
+	}
+
+	.menu td{
+		padding-bottom: 2em;
+	}
+
+	.menu td:first-child {		/* First data of each row - the dish */
+		width: 300px;
+		padding-left: 1em;
+	}
+
+	.menu td:last-child {			/* Last data of each row - the price */
+		text-align: right;
+		padding-right: 1em;
+		font-weight: bold;
+	}
+
+	.menu tr:last-child td{		/* Last row - the "special offer" */
+		font-size: .55em;
+		text-align: center;
+		font-weight: bold;
+	}
+	
+	
+	/* REVIEW PAGE */
+	.review {
+		width: 80%;
+		margin: auto;
+		margin-bottom: 4em;
+		padding-bottom: 2em;
+		border-bottom: 1px solid #AAAAAA;
+		box-shadow: 0 10px 8px -8px #666;
+		position: relative
+	}
+	
+	.review h2 {
+		font-size: 1.2em;
+	}
+	
+	.review cite {
+		padding-left: 1em;
+		margin-bottom: 1.5em;
+		display: block;
+		color: #777777;
+	}
+	
+	.review p {
+		text-indent: 2.5em;
+		margin-top: 1em;
+	}
+	
+	.review q {					/* Aside quote */
+		float: right;			/* Floats to the right, allowing text to flow around it */
+		display: block;
+		color: #555555;
+		width: 11em;
+		margin: .5em 0 0 1em;
+		text-indent: 0;
+		font-size: 1.5em;
+		font-weight: bold;
+		text-align: center;
+		padding: .5em 0;
+		border-top: 1px solid #777777;
+		border-bottom: 1px solid #777777;
+	}
+	
+	/* CONTACT */
+	#googleMap {
+		float: right;
+		border: 5px solid #FFFFFF;
+		box-shadow: 0 0 10px #555;
+		width: 60%;
+		height: 14.5em;
+	}
+	
+	#contactDetails .para {
+		text-indent: 0;				/* Removes the standard text indent of paragraph for the contact details */
+		float: left;				/* Float left, alongside the embedded map */
+		margin: 1em 0 5em .5em;
+		padding: 0;
+	}
+	
+	.para #number {
+		display: block;
+		margin: 2em 0;
+	}
+	
+	#openingHrs {
+		clear: both;
+	}
+	
+	#openingHrs table {
+		margin-top: 1.5em;
+		font-size: 1.5em;
+	}
+	
+	#openingHrs td {
+		width: 15em;
+		height: 1.5em;
+	}
+	
+	#openingHrs tr:first-child {
+		font-weight: bold;
+	}
+/* __________________________________________*/
+
+
+
+/* SIDEBAR */
+#sidebar {
+	width: 24%;
+	text-align: center;
+	float: right;			/* Floats to the right of the content */
+}
+
+.twitter-timeline {			/* Embedded Twitter Feed */
+	width: 86%;
+	height: 25em;
+}
+
+	/* PROVERB */
+	#proverb {
+		margin-top: 3em;
+		font-size: 1.1em;	
+		text-align: center;
+		font-family: Book Antiqua, Arial, Verdana;
+	}
+
+	#quote {								/* Container for proverb */
+		width: 80%;
+		margin: auto;
+	}
+
+	#quote:before, #quote:after {
+		font-size: 5em;
+		color: #777777;
+		font-family: Impact, Arial;
+	}
+	
+	#quote:before {
+		content: "\201C";				/* Smart Quote */
+		float: left;
+		line-height: 0;					/* Places quote over text */
+	}
+	
+	#quote:after {
+		content: "\201D";				/* Smart Quote */
+		float: right;
+	}
+	
+	/* SOCIAL */
+	#socialContainer {
+		clear: both;
+		margin: auto;
+		width: 90%;
+		padding-top: 1.5em;
+		margin-bottom: 1em;
+		box-shadow: 0 -1px 0 #B3B3B3;	/* Separates all three columns */
+		border-top: 1px solid #FFFFFF;
+	}
+	
+	#fb, #gp, #in, #tw, #pi{
+	display: inline-block;
+	background: #555555;
+	padding: .3em;
+	height: 1.3em;
+	width: 1.3em;
+	}
+
+	#fb:hover {
+		background: #3B559F;
+	}
+	#gp:hover {
+		background: #B83324;
+	}
+	#in:hover {
+		background: #0274B3;
+	}
+	#tw:hover {
+		background: #1AB2E8;
+	}
+	#pi:hover {
+		background: #CB2027
+	}
+/* __________________________________________*/
+
+
+
+/* FOOTER */
+#footer {
+	background: #202020;
+	box-shadow: inset 0 1em 1em #101010;	/* Creates box shadow */
+	clear: both;							/* Positions under content & sidebar */
+	color: #E8E8E8;
+	position: relative;
+	padding-top: 3em;						/* Pushes footer content down from top */
+	border-top: 3px solid #000000;
+	z-index: 100;							/* Places above all other elements */
+}
+
+#footer h2 {
+	font-size: 1.2em;
+	margin-bottom: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid #151515;		/* Underline */
+	box-shadow: 0 1px 0 #2F2F2F;			/* Underline */
+}
+
+#timetable, #testimony, #social {
+	width: 25%;
+	display: inline-block;
+	vertical-align: top;					/* Stops problem with text adding a baseline to the element */
+}
+
+	/* OPENING HOURS */
+	#timetable {
+		margin-left: 5%;
+	}
+	
+	#footer table td{
+		width: 11em;
+		height: 1.5em;
+	}
+
+	#footer table tr:first-child {
+		padding-bottom: 5em;
+		font-weight: bold;					/* Bolds the "headings" of the tables' rows */
+	}
+
+	
+	/* TESTIMONY */
+	#testimony {
+		margin-left: 7.5%;
+		margin-right: 7.5%;
+	}
+	
+	#testimony blockquote {
+		padding-top: 2em;
+		margin-bottom: 2em;
+	}
+	
+	#testimony blockquote:before {			/* Smart Quote */
+		content: "\201C";				/* Open quote code */
+		position: absolute;		
+		line-height: .2em;
+		font-size: 5em;
+		display: block;
+	}
+	
+	#testimony cite {
+		padding-left: 1em;				/* Pushes citation in */
+		font-size: .8em;
+	}
+	
+	#testimony a {
+		font-size: .8em;
+		text-decoration: underline;		/* Places an underline under the link to the testimony */
+	}
+	
+	
+	/* SOCIAL / CONTACT */
+	#social ul {
+		margin-bottom: 3em;
+	}
+	
+	#social li {
+		list-style-type: none;			/* Removes list styling */
+		text-decoration: none;
+		line-height: 2em;
+	}
+	
+	#facebook:hover {
+		color: #3B559F;
+	}
+	#googleplus:hover {
+		color: #B83324;
+	}
+	#linkedin:hover {
+		color: #0274B3;
+	}
+	#twitter:hover {
+		color: #1AB2E8;
+	}
+	#pinterest:hover {
+		color: #CB2027;
+	}
+	
+	
+	/* BASE-END */
+	#base {
+		margin-top: 1em;					/* Pushes base down from footer content */
+		border-top: 1px solid #2F2F2F;		/* Separator */
+		box-shadow: 0 -1px 0 #151515;		/* Separator */
+		padding: .5em 0;					/* Spaces base */
+	}
+	
+	#base small {
+		margin-left: .5em;
+	}
+	
+	#base ul {
+		float: right;						/* Floats footer nav to the right */
+	}
+	
+	#base li {
+		display: inline-block;
+		font-size: 1em;
+		margin: 0 .5em;
+	}
+/* __________________________________________*/
+
+
+
+/* FORMS */
+label {
+	display: block;
+	margin-bottom: .3em;
+}
+
+input {
+	margin-bottom: .5em;
+}
+
+fieldset {
+	border: 0;
+	margin: 2.5em 0;
+}
+
+legend {
+	margin-bottom: .8em;
+	font-family: tahoma;
+	font-weight: bold;
+}
+
+	/* BUTTONS */
+	.endForm button {
+	border: 0;					/* Removes default button border */
+	font-size: 1.2em;
+	height: 2.2em;
+	width: 7em;
+	cursor: pointer;			/* Pointer to show it's clickable */
+	color: white;
+	font-family: verdana;
+	}
+
+	.endForm button[type="submit"] {
+		background: #008000;
+	}
+
+	.endForm button[type="reset"] {
+		background: #FF0000;
+	}
+	
+	
+	/* TEXT INPUTS */
+	input[type="text"], input[type="month"], textarea {
+	border: 1px solid #BBB;
+	padding: .5em 1em;
+	margin: .5em 0 1em 0;
+	display: block;
+	font-family: arial;
+	}
+	
+	textarea {
+		max-width: 50em;		/* Used to limit how expandable the textarea is */
+		min-width: 20em;
+		max-height: 15em;		/* Used to limit how expandable the textarea is */
+		min-height: 8em;
+	}
+	
+	input[type="text"] {
+		width: 13em;
+		height: 1em;
+	}
+
+	input[type="text"]:focus, input[type="month"]:focus, textarea:focus {		/* Selector for all when all text inputs gain focus */
+		border: 1px solid #666;
+	}
+	
+	
+	/* RADIO BOXES */
+	.radio label {  
+		display: inline-block;  
+		cursor: pointer;		/* Creates pointer when mouse hovers */
+		position: relative;
+		padding-left: 1.5em;
+		margin-left: 2em;
+		font-size: .8em;  
+	}
+	
+	.radio input[type=radio] {  
+		display: none;			/* Hides the original radio button */
+	}
+		
+	.radio label:before {  
+		content: "";			/* Creates empty content to fill the :before*/
+		display: inline-block;
+		width: 1.1em;
+		height: 1.1em;
+		margin-right: 5px;
+		position: absolute;  
+		left: 0;    			/* Positions to the left of the label */
+		background-color: #BBB;
+		border-radius: 100%;
+		box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);  
+	}  
+	
+	.radio input[type=radio]:checked + label:before {			/* Custom radio buttons */
+		background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, 
+		rgba(0,0,0,1) 30%, rgba(25,25,25,1) 32%, rgba(40,40,40,1) 34%, 
+		rgba(63,63,63,1) 35%, rgba(96,96,96,1) 38%, rgba(96,96,96,1) 40%, 
+		rgba(158,158,158,1) 42%, rgba(219,214,215,1) 100%);
+		
+		background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%, 
+		rgba(0,0,0,1) 30%, rgba(25,25,25,1) 32%, rgba(40,40,40,1) 34%, 
+		rgba(63,63,63,1) 35%, rgba(96,96,96,1) 38%, rgba(96,96,96,1) 40%, 
+		rgba(158,158,158,1) 42%, rgba(219,214,215,1) 100%);
+		
+		background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,1) 0%,	/* HAH! fixed the custom IE buttons */
+		rgba(0,0,0,1) 30%, rgba(25,25,25,1) 32%, rgba(40,40,40,1) 34%, 
+		rgba(63,63,63,1) 35%, rgba(96,96,96,1) 38%, rgba(96,96,96,1) 40%, 
+		rgba(158,158,158,1) 42%, rgba(219,214,215,1) 100%);
+	}
+	
+	
+	/* RANGE/EXPERIENCE SLIDERS */
+	input[type="range"] {
+		width: 10em;
+		padding: 0 1.25em 0 1.25em;
+		cursor: pointer;
+	}
+	
+	form p {
+		width: 18em;
+		margin-bottom: 2.5em;
+		padding-bottom: 2.5em;
+	}
+	
+	form span {
+		color: #D93222;
+	}
+/* __________________________________________*/
+	
+	
+
+/* OTHER MEDIA / RESPONSIVE DESIGN */
+@media all and (max-width: 570px) {
+	#base ul, #social, #timetable {
+		display: none;
+	}
+	
+	#footer {
+		padding: 0;
+	}
+	#base {
+		margin: 0;
+		border: 0;
+	}
+}
+
+@media all and (max-width: 669px) {		/* HIDES DISPLAY FOR SMALLER DEVICES */
+	body {
+		font-size: 45%;
+	}
+	#display {
+		display: none;
+	}
+	#header {
+		border-bottom: 5px solid #111111;
+		z-index: 10;
+		position: relative;
+	}
+}
+
+@media all and (max-width: 780px) {
+	#testimony {
+		display: none;
+	}
+	#timetable, #social {
+		width: 40%;
+	}
+	#timetable  {
+		margin-right: 10%;
+	}
+}
+
+@media all and (min-width: 750px) {
+	body {
+		font-size: 60%;
+	}
+}
+
+@media all and (max-width: 855px) { 	/* HIDES SIDEBAR FOR SMALLER DEVICES */
+	body {
+		font-size: 85%;
+	}
+	#sidebar {
+		display: none;
+	}
+	#content {
+		width: 100%;
+	}
+}
+
+@media all and (min-width: 856px) {
+	body {
+		font-size: 90%;
+	}
+}
+
+@media all and (min-width: 950px) {
+	body {
+		font-size: 90%;
+	}
+}
+
+@media all and (min-width: 1300px) {
+	body {
+		font-size: 100%;
+	}
+}

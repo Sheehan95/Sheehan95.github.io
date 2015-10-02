@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!-- AUTHOR:	ALAN SHEEHAN -->
+<!-- DATE:		28/11/2013 -->
+	<html>
+	
+		<head>
+			<title>Man Fu Palace</title>
+			<meta charset="utf-8">
+			<link rel="shortcut icon" href="images/favicon.ico">
+			<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+			<script type="text/javascript" src="script.js"></script>
+		</head>
+		
+		<body>
+			<!-- HEADER -->
+			<div id="header">
+				<a href="index.html"><img src="images/logo.png" alt="Man Fu Palace" title="Man Fu Palace"/></a>		<!-- Logo -->
+				
+				<nav>
+					<a href="index.html">Home</a>
+					<a href="menu.html">Menu</a>
+					<a href="contact.html" id="active">Contact</a>
+					<a href="review.html">Reviews</a>
+					<a href="feedback.html">Feedback</a>
+				</nav>
+			</div>
+			
+			
+			<!-- IMAGE SLIDER -->
+			<div id="display">
+				<div id="displayPattern"></div>
+				
+				<img id="displayButton_left" src="images/arrow.png" alt="left" onclick="displayMinus()"/>
+				
+				<img id="displayButton_right" src="images/arrow.png" alt="right" onclick="displayPlus()"/>
+				
+				<div id="info" onmouseover="displayEnd()" onmouseout="displayTimer()">Welcome to the Man Fu Palace</div>
+				
+				<img id="image" src="images/display1.jpg" alt="Image Slider" title="Image Slider"/>
+			</div>
+
+			
+			<!-- MAIN CONTENT BODY -->
+			<main>
+			<!-- CONTENT -->
+				<div id = "content">
+					<h1>Contact</h1>
+					
+					<p class="para">
+					Reservations can be made via e-mail or telephone. Be sure to book your meal a week in advance 
+					in order to secure a table. We will also gladly accept calls regarding any complaints you may
+					have had during a meal here at the Man Fu Palace and we will do our best to improve and 
+					compensate you if necessary.
+					</p>
+					
+					<div id="contactDetails">
+					<h2>Contact Details</h2>
+						<p class="para">
+						Man Fu Palace,	<br/>
+						8 Eden Quay,	<br/>
+						Dublin City,	<br/>
+						County Dublin	<br/>
+						<span id="number">086 2179869</span>
+						<a href="mailto:ManFuPalace@Yahoo.com">ManFuPalace@Yahoo.Com</a>
+						</p>
+						
+						<iframe id="googleMap" src="https://maps.google.com/maps?oe=utf-8&amp;client=firefox-nightly&amp;channel=sb&amp;q=8+Eden+Quay+Dublin&amp;ie=UTF8&amp;hq=&amp;hnear=8+Eden+Quay,+Dublin,+County+Dublin,+Ireland&amp;t=m&amp;ll=53.347836,-6.258087&amp;spn=0.038428,0.038624&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+					</div>
+					
+					<div id="openingHrs">
+					<h2>Opening Hours</h2>
+					<table>
+						<tr>
+							<td>Day</td>
+							<td>Hours</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Monday</td>
+							<td>11:00 - 20:00</td>
+						</tr>
+						<tr>
+							<td>Tuesday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Wednesday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Thursday</td>
+							<td>11:00 - 20:00</td>
+						</tr>
+						<tr>
+							<td>Friday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Saturday</td>
+							<td>11:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td>Sunday</td>
+							<td>11:00 - 18:00</td>
+						</tr>
+					</table>
+					</div>
+					
+				</div>
+			
+			<!-- SIDEBAR -->
+				<div id = "sidebar">
+					<div id="quote">
+						<blockquote id="proverb"></blockquote>
+					</div>
+					
+					<!-- SOCIAL NETWORKING -->
+					<div id="socialContainer">
+						<a href="http://www.facebook.com/" target="_blank"><img id="fb" src="images/facebook.png" alt="Facebook"/></a>
+						<a href="https://plus.google.com/" target="_blank"><img id="gp" src="images/google.png" alt="Google+"/></a>
+						<a href="http://www.linkedin.com/" target="_blank"><img id="in" src="images/linkedin.png" alt="LinkedIn"/></a>
+						<a href="http://www.twitter.com/" target="_blank"><img id="tw" src="images/twitter.png" alt="Twitter"/></a>
+						<a href="https://www.pinterest.com/" target="_blank"><img id="pi" src="images/pinterest.png" alt="Pinterest"/></a>
+					</div>
+						
+					<!-- TWITTER LIVE FEED -->
+					<a class="twitter-timeline"  href="https://twitter.com/ManFuPalace"  data-widget-id="394186537039962112">Tweets by @ManFuPalace</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+			</main>
+			
+			
+			<!-- FOOTER -->
+			<div id = "footer">
+			
+				<div id = "timetable">
+					<h2>Opening Hours</h2>
+					<table>
+						<tr>
+							<td>Day</td>
+							<td>Hours</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td>Monday</td>
+							<td>11:00 - 20:00</td>
+						</tr>
+						<tr>
+							<td>Tuesday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Wednesday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Thursday</td>
+							<td>11:00 - 20:00</td>
+						</tr>
+						<tr>
+							<td>Friday</td>
+							<td>11:00 - 22:00</td>
+						</tr>
+						<tr>
+							<td>Saturday</td>
+							<td>11:00 - 18:00</td>
+						</tr>
+						<tr>
+							<td>Sunday</td>
+							<td>11:00 - 18:00</td>
+						</tr>
+					</table>
+				</div>
+				
+				<div id = "testimony">
+					<h2>Testimonies</h2>
+					
+					<blockquote>
+					The finest cuisine and best service that can be found in Dublin City <br/>
+					<cite>The Onion</cite>
+					</blockquote>
+					
+					<blockquote>
+					There's no better Chinese Restaurant out there in Ireland, let alone Dublin City <br/>
+					<cite>News Thump</cite>
+					</blockquote>
+					
+					<blockquote>
+					The best place to dine in Dublin City <br/>
+					<cite>News Biscuit</cite>
+					</blockquote>
+					
+					<a href="review.html">Read Full Reviews Here</a>
+				</div>
+				
+				<div id = "social">
+					<h2>Contact</h2>
+					<ul>
+						<li>086-2179869</li>
+						<li><a href="mailto:manfupalace@yahoo.com">ManFuPalace@Yahoo.Com</a></li>
+					</ul>
+					
+					<ul>
+						<li><a href="https://www.facebook.com/" id="facebook">Facebook</a></li>
+						<li><a href="https://plus.google.com/" id="googleplus">Google+</a></li>
+						<li><a href="http://www.linkedin.com/" id="linkedin">LinkedIn</a></li>
+						<li><a href="http://www.twitter.com/" id="twitter">Twitter</a></li>
+						<li><a href="https://www.pinterest.com/" id="pinterest">Pinterest</a></li>
+					</ul>
+					
+				</div>
+				
+				<div id = "base">
+				
+					<small>Copyright &copy; 2013 Man Fu Palace</small> <br/>
+					<small>Website Design &amp; Logo Created by Alan Sheehan</small>
+					
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="review.html">Reviews</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+					</ul>
+					
+				</div>
+			
+			</div>
+		</body>
+		
+	</html>

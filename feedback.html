@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!-- AUTHOR:	ALAN SHEEHAN -->
+<!-- DATE:		28/11/2013 -->
+	<html>
+	
+		<head>
+			<title>Man Fu Palace</title>
+			<meta charset="utf-8">
+			<link rel="shortcut icon" href="images/favicon.ico">
+			<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+			<script type="text/javascript" src="script.js"></script>
+		</head>
+		
+		<body>
+			<!-- HEADER -->
+			<div id="header">
+				<a href="index.html"><img src="images/logo.png" alt="Man Fu Palace" title="Man Fu Palace"/></a>		<!-- Logo -->
+				
+				<nav>
+					<a href="index.html">Home</a>
+					<a href="menu.html">Menu</a>
+					<a href="contact.html">Contact</a>
+					<a href="review.html">Reviews</a>
+					<a href="feedback.html" id="active">Feedback</a>
+				</nav>
+			</div>
+			
+			
+			<!-- IMAGE SLIDER -->
+			<div id="display">
+				<div id="displayPattern"></div>
+				
+				<img id="displayButton_left" src="images/arrow.png" alt="left" onclick="displayMinus()"/>
+				
+				<img id="displayButton_right" src="images/arrow.png" alt="right" onclick="displayPlus()"/>
+				
+				<div id="info" onmouseover="displayEnd()" onmouseout="displayTimer()">Welcome to the Man Fu Palace</div>
+				
+				<img id="image" src="images/display1.jpg" alt="Image Slider" title="Image Slider"/>
+			</div>
+
+			
+			<!-- MAIN CONTENT BODY -->
+			<main>
+			<!-- CONTENT -->
+				<div id = "content">
+					<h1>Feedback</h1>
+					
+					<form method="get">
+						<fieldset class="details">
+							<legend>Leave Us A Comment</legend>
+							<label>First Name</label>
+								<input type="text" name="nameFirst" required maxlength="24"/>
+							<label>Second Name</label>
+								<input type="text" name="nameSecond" required maxlength="24"/>
+							<label for="comment">Your Comment</label>
+								<textarea id="comment" cols="50" rows="10" name="comment" placeholder="Please be kind..." required></textarea>
+							<label>Month of Visit</label>
+								<input name="monthVisit" type="month" required/>
+						</fieldset>
+					
+						<fieldset class="radio">
+							<legend>Overall Experience</legend>
+							<input id="Poor" type="radio" name="overall" value="Poor"/>  
+								<label for="Poor">Poor</label>
+							<input id="Fair" type="radio" name="overall" value="Fair"/>  
+								<label for="Fair">Fair</label>
+							<input id="Average" type="radio" name="overall" value="Average" checked />  
+								<label for="Average">Average</label>
+							<input id="Good" type="radio" name="overall" value="Good"/>  
+								<label for="Good">Good</label>
+							<input id="Excellent" type="radio" name="overall" value="Excellent"/>  
+								<label for="Excellent">Excellent</label>
+						</fieldset>
+							
+						<fieldset class="radio">
+							<legend>Type of Visit</legend>
+							<input id="Family" type="radio" name="typeVisit" value="Family" checked />  
+								<label for="Family">Family</label>  
+							<input id="Romantic" type="radio" name="typeVisit" value="Romantic"/>  
+								<label for="Romantic">Romantic</label>
+							<input id="Friends" type="radio" name="typeVisit" value="Friends"/>  
+								<label for="Friends">Friends</label>
+							<input id="Business" type="radio" name="typeVisit" value="Business"/>  
+								<label for="Business">Business</label>
+							<input id="Solo" type="radio" name="typeVisit" value="Solo"/>  
+								<label for="Solo">Solo</label>
+						</fieldset>
+						
+						<fieldset class="rating">
+							<legend>Your Experience</legend>
+							<input id="food" name="food" type="range" min="1" max="5" value="3" onchange="showFood(this.value)"/>
+								<p>I thought the food was <span id="showFood">average</span></p>
+								
+							<input id="value" name="value" type="range" min="1" max="5" value="3" onchange="showValue(this.value)"/>
+								<p>I thought the value was <span id="showValue">average</span></p>
+							
+							<input id="service" name="service" type="range" min="1" max="5" value="3" onchange="showService(this.value)"/>
+								<p>I thought the service was <span id="showService">average</span></p>
+							
+							<input id="atmosphere" name="atmosphere" type="range" min="1" max="5" value="3" onchange="showAtmosphere(this.value)"/>
+								<p>I thought the atmosphere was <span id="showAtmosphere">average</span></p>
+						</fieldset>
+						
+						<fieldset class="endForm">
+							<button type="submit">Submit</button>
+							<button type="reset" onClick="feedbackReset()">Reset</button>
+						</fieldset>
+					</form>
+				
+				</div>
+			
+			<!-- SIDEBAR -->
+				<div id = "sidebar">
+					<div id="quote">
+						<blockquote id="proverb"></blockquote>
+					</div>
+					
+					<!-- SOCIAL NETWORKING -->
+					<div id="socialContainer">
+						<a href="http://www.facebook.com/" target="_blank"><img id="fb" src="images/facebook.png" alt="Facebook"/></a>
+						<a href="https://plus.google.com/" target="_blank"><img id="gp" src="images/google.png" alt="Google+"/></a>
+						<a href="http://www.linkedin.com/" target="_blank"><img id="in" src="images/linkedin.png" alt="LinkedIn"/></a>
+						<a href="http://www.twitter.com/" target="_blank"><img id="tw" src="images/twitter.png" alt="Twitter"/></a>
+						<a href="https://www.pinterest.com/" target="_blank"><img id="pi" src="images/pinterest.png" alt="Pinterest"/></a>
+					</div>
+						
+					<!-- TWITTER LIVE FEED -->
+					<a class="twitter-timeline"  href="https://twitter.com/ManFuPalace"  data-widget-id="394186537039962112">Tweets by @ManFuPalace</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					
+					<div id="filler"></div>
+					
+				</div>
+			</main>
+			
+			
+			<!-- FOOTER -->
+			<div id = "footer">
+			
+				<div id = "timetable">
+					<h2>Opening Hours</h2>
+						<table>
+							<tr>
+								<td>Day</td>
+								<td>Hours</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Monday</td>
+								<td>11:00 - 20:00</td>
+							</tr>
+							<tr>
+								<td>Tuesday</td>
+								<td>11:00 - 22:00</td>
+							</tr>
+							<tr>
+								<td>Wednesday</td>
+								<td>11:00 - 22:00</td>
+							</tr>
+							<tr>
+								<td>Thursday</td>
+								<td>11:00 - 20:00</td>
+							</tr>
+							<tr>
+								<td>Friday</td>
+								<td>11:00 - 22:00</td>
+							</tr>
+							<tr>
+								<td>Saturday</td>
+								<td>11:00 - 18:00</td>
+							</tr>
+							<tr>
+								<td>Sunday</td>
+								<td>11:00 - 18:00</td>
+							</tr>
+						</table>
+				</div>
+				
+				<div id = "testimony">
+					<h2>Testimonies</h2>
+					
+					<blockquote>
+					The finest cuisine and best service that can be found in Dublin City <br/>
+					<cite>The Onion</cite>
+					</blockquote>
+					
+					<blockquote>
+					There's no better Chinese Restaurant out there in Ireland, let alone Dublin City <br/>
+					<cite>News Thump</cite>
+					</blockquote>
+					
+					<blockquote>
+					The best place to dine in Dublin City <br/>
+					<cite>News Biscuit</cite>
+					</blockquote>
+					
+					<a href="review.html">Read Full Reviews Here</a>
+				</div>
+				
+				<div id = "social">
+					<h2>Contact</h2>
+					<ul>
+						<li>086-2179869</li>
+						<li><a href="mailto:manfupalace@yahoo.com">ManFuPalace@Yahoo.Com</a></li>
+					</ul>
+					
+					<ul>
+						<li><a href="https://www.facebook.com/" id="facebook">Facebook</a></li>
+						<li><a href="https://plus.google.com/" id="googleplus">Google+</a></li>
+						<li><a href="http://www.linkedin.com/" id="linkedin">LinkedIn</a></li>
+						<li><a href="http://www.twitter.com/" id="twitter">Twitter</a></li>
+						<li><a href="https://www.pinterest.com/" id="pinterest">Pinterest</a></li>
+					</ul>
+					
+				</div>
+				
+				<div id = "base">
+				
+					<small>Copyright &copy; 2013 Alan Sheehan</small> <br/>
+					<small>Website Design &amp; Logo Created by Alan Sheehan</small>
+					
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="menu.html">Menu</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li><a href="review.html">Reviews</a></li>
+						<li><a href="feedback.html">Feedback</a></li>
+					</ul>
+					
+				</div>
+			
+			</div>
+		</body>
+		
+	</html>
